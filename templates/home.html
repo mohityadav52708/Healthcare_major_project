@@ -1,71 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsive Navbar</title>
     <link rel="stylesheet" href="../static/css/style.css" />
     <link rel="stylesheet" href="../static/css/styletwo.css" />
-</head>
-<body>
+  </head>
+  <body>
     <header id="navbar">
-        <div class="navbar-container container">
-          <a href="/" class="home-link">
-            JIVSAN
-          </a>
-          <button type="button" id="navbar-toggle" aria-controls="navbar-menu" aria-label="Toggle menu" aria-expanded="false">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <div id="navbar-menu" aria-labelledby="navbar-toggle">
-            <ul class="navbar-links">
-              <li class="navbar-item"><a class="navbar-link" href="/about">Home</a></li>
-              <li class="navbar-item"><a class="navbar-link" href="/blog">AboutUs</a></li>
-              <li class="navbar-item"><a class="navbar-link" href="/careers">Disease</a></li>
-              <li class="navbar-item"><a class="navbar-link" href="/contact">Recommendation</a></li>
-              <li class="navbar-item"><a class="navbar-link" href="/contact">Contact</a></li>
-              <li class="navbar-item"><a class="navbar-link" id="logout" href="/contact">Logout</a></li>
-            </ul>
-          </div>
-        </div>
-      </header>
-      <div class="home_container">
-        <div class="content_cover_of_home_container">
-          <div class="left_home_content">
-            <h1>Best Care For Your Family</h1>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-            <a href="#contact-us" class="button-white banner-button w-button">Book appointment</a>
-          </div>
-          <div class="right_home_content">
-            <img src="../static/img/right_home.png"/>
-          </div>
+      <div class="navbar-container container">
+        <a href="/" class="home-link"> JIVSAN </a>
+        <button
+          type="button"
+          id="navbar-toggle"
+          aria-controls="navbar-menu"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div id="navbar-menu" aria-labelledby="navbar-toggle">
+          <ul class="navbar-links">
+            <li class="navbar-item">
+              <a class="navbar-link" href="/about">Home</a>
+            </li>
+            <li class="navbar-item">
+              <a class="navbar-link" href="/blog">AboutUs</a>
+            </li>
+            <li class="navbar-item">
+              <a class="navbar-link" href="/careers">Disease</a>
+            </li>
+            <li class="navbar-item">
+              <a class="navbar-link" href="/contact">Recommendation</a>
+            </li>
+            <li class="navbar-item">
+              <a class="navbar-link" href="/contact">Contact</a>
+            </li>
+            <li class="navbar-item">
+              <a class="navbar-link" id="logout" href="/contact">Logout</a>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="second_container">
-        <div class="content_cover_of_second_container">
+    </header>
+    <div class="home_container">
+      <div class="content_cover_of_home_container">
+        <div class="left_home_content">
+          <h1>Best Care For Your Family</h1>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </p>
+          <a href="#contact-us" class="button-white banner-button w-button"
+            >Book appointment</a
+          >
+        </div>
+        <div class="right_home_content">
+          <img src="../static/img/right_home.png" />
+        </div>
+      </div>
+    </div>
+    <div class="second_container">
+      <div class="content_cover_of_second_container">
         <div class="firstbox_second_container">
-          <img src="../static/img/icon1.png"/>
+          <img src="../static/img/icon4.png" />
           <h2>satisfaction guaranteed</h2>
           <p>Lorem ipsum is simply dummy text of the printing</p>
-
         </div>
         <div class="secondbox_second_container">
-          <img src="../static/img/icon2.png"/>
+          <img src="../static/img/icon5.png" />
           <h2>awesome technology</h2>
           <p>Lorem ipsum is simply dummy text of the printing</p>
-
         </div>
         <div class="thirdbox_second_container">
-          <img src="../static/img/icon3.png"/>
+          <img src="../static/img/icon6.png" />
           <h2>professional dentist</h2>
           <p>Lorem ipsum is simply dummy text of the printing</p>
-
-        </div>
-        
         </div>
       </div>
+    </div>
+    <div class="third_container">
+      <div class="content_cover_of_third_container">
+        <div class="left_third_container">
+          <img src="../static/img/4.jpg"/>
+        </div>
+        <div class="right_third_container">
+          <div class="top_right_third_container">
+           <b> <a href="">AboutUs</a></b>
+            <h1>We care About Your Dental Health</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+          </div>
+          <div class="bottom_right_third_container">
+            <div class="sub_bottom_right_third_container">
+              <div class="first_bottom_right_third_container">
+                <img src="../static/img/vision.png"/>
+              </div>
+              <div class="second_bottom_right_third_container">
+                  <h3>Our vision</h3>
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              </div>
+            </div>
+            <div class="sub_bottom_right_third_container">
+              <div class="first_bottom_right_third_container">
+                <img src="../static/img/mission.png"/>
+              </div>
+              <div class="second_bottom_right_third_container">
+                <h3>Our mission</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="../static/js/home.js"></script>
-</body>
+  </body>
 </html>

@@ -428,7 +428,104 @@
 .second_container .thirdbox_second_container {
     animation-delay: 0.6s;
 }
-
+.third_container{
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.third_container .content_cover_of_third_container{
+  width: 90%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.third_container .content_cover_of_third_container .left_third_container{
+  width: 50%;
+  height: 100%;
+}
+.third_container .content_cover_of_third_container .left_third_container img{
+  width: 100%;
+}
+.third_container .content_cover_of_third_container .right_third_container{
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.third_container .content_cover_of_third_container .right_third_container .top_right_third_container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.third_container .content_cover_of_third_container .right_third_container .top_right_third_container a{
+  color: #0064ff;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 20px;
+  font-weight: 500;
+}
+.third_container .content_cover_of_third_container .right_third_container .top_right_third_container h1{
+  color: black;
+    text-align: left;
+    text-transform: capitalize;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-family: Inter, sans-serif;
+    font-size: 60px;
+    line-height: 70px;
+}
+.third_container .content_cover_of_third_container .right_third_container .top_right_third_container p{
+  color: #444;
+    text-align: left;
+    font-family: Noto Sans, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+}
+.third_container .content_cover_of_third_container .right_third_container .bottom_right_third_container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.third_container .content_cover_of_third_container .right_third_container .bottom_right_third_container .sub_bottom_right_third_container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 20px;
+    display: flex;
+}
+.third_container .content_cover_of_third_container .right_third_container .bottom_right_third_container .sub_bottom_right_third_container .first_bottom_right_third_container img{
+  width: 60px;
+  margin-right: 20px;
+}
+.third_container .content_cover_of_third_container .right_third_container .bottom_right_third_container .sub_bottom_right_third_container .second_bottom_right_third_container h3{
+  color: black;
+  text-align: left;
+  text-transform: capitalize;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: Inter, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+}
+.third_container .content_cover_of_third_container .right_third_container .bottom_right_third_container .sub_bottom_right_third_container .second_bottom_right_third_container p{
+  color: #444;
+  text-align: left;
+  font-family: Noto Sans, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+}
   
   @media screen and (min-width: 700px) {
     #navbar-toggle,
@@ -514,7 +611,7 @@
     transition: none;
   }
   .second_container{
-    height: 100vh;
+    height: 116vh;
   }
   .content_cover_of_second_container{
     flex-direction: column;
@@ -527,5 +624,22 @@
   }
   .second_container .content_cover_of_second_container .thirdbox_second_container{
     width: 90%;
+  }
+  .third_container{
+    height: 155vh;
+  }
+  .third_container .content_cover_of_third_container{
+    flex-direction: column;
+  }
+  .third_container .content_cover_of_third_container .left_third_container{
+    width: 100%;
+    height: 0vh;
+  }
+  .third_container .content_cover_of_third_container .right_third_container{
+    width: 100%;
+  }
+  .third_container .content_cover_of_third_container .right_third_container .top_right_third_container h1{
+    font-size: 35px;
+    line-height: 45px;
   }
   }
