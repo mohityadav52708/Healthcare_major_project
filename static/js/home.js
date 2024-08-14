@@ -62,3 +62,24 @@ document.addEventListener("DOMContentLoaded", function() {
       observer.observe(box);
   });
 });
+document.addEventListener("DOMContentLoaded", function() {
+  const boxes = document.querySelectorAll(".fourth_container > .content_cover_of_fourth_container > div");
+
+  const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add("fade-in");
+              entry.target.style.animationPlayState = "running"; // Start the animation
+          } else {
+              entry.target.classList.remove("fade-in");
+              entry.target.style.animationPlayState = "paused"; // Pause the animation when out of view
+              entry.target.style.opacity = "0"; // Reset opacity
+              entry.target.style.transform = "translateY(20px)"; // Reset transform
+          }
+      });
+  }, { threshold: 0.1 });
+
+  boxes.forEach(box => {
+      observer.observe(box);
+  });
+});

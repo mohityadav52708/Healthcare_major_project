@@ -526,7 +526,104 @@
   font-weight: 400;
   line-height: 30px;
 }
-  
+.fourth_container{
+  width: 100%;
+  height: 120vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #0064ff;
+  margin-top: 30vh;
+}
+.fourth_container h1{
+  color: white;
+  text-transform: capitalize;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-family: Inter, sans-serif;
+  font-size: 60px;
+  line-height: 70px;
+}
+.fourth_container p {
+  color: #ffffff;
+  text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Noto Sans, sans-serif;
+}
+.content_cover_of_fourth_container{
+  width: 80%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+}
+@keyframes moveUp {
+  0% {
+      transform: translateY(0);
+  }
+  100% {
+      transform: translateY(-20px);
+  }
+}
+
+/* Keyframes for moving downwards */
+@keyframes moveDown {
+  0% {
+      transform: translateY(-20px);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+.fourth_container .content_cover_of_fourth_container .box{
+  width: 30%;
+  height: 40vh;
+  background-color: #ffffff;
+    border-radius: 40px;
+    padding: 50px 30px;
+    margin-top: 20px;
+    transition:  0.5s ease-in-out;
+    cursor: pointer;
+}
+
+
+.fourth_container .content_cover_of_fourth_container .box img{
+  height: 50px;
+  margin-bottom: 30px;
+}
+.fourth_container .content_cover_of_fourth_container .h3 img{
+  color: black;
+    text-align: left;
+    text-transform: capitalize;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: Inter, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+.fourth_container .content_cover_of_fourth_container .box p{
+  color: #444;
+  text-align: left;
+  font-family: Noto Sans, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  margin-bottom: 20px;
+}
+.fourth_container .content_cover_of_fourth_container .box a{
+  color:#0064ff;
+  text-decoration: none;
+}
+.fourth_container .content_cover_of_fourth_container .box:hover {
+  background-color: rgb(0, 208, 255);
+  color: white;
+}
   @media screen and (min-width: 700px) {
     #navbar-toggle,
     #navbar-toggle[aria-expanded="true"] {
@@ -641,5 +738,23 @@
   .third_container .content_cover_of_third_container .right_third_container .top_right_third_container h1{
     font-size: 35px;
     line-height: 45px;
+  }
+  .fourth_container{
+    margin-top: -40vh;
+    height: 300vh;
+  }
+  .fourth_container .content_cover_of_fourth_container{
+    margin-top: 0;
+    width: 90%;
+  }
+
+  .fourth_container h1{
+    font-size: 30px;
+        line-height: 38px;
+        margin-top: 40px;
+  }
+  .fourth_container .content_cover_of_fourth_container .box{
+    width: 100%;
+    height: 43vh;
   }
   }
