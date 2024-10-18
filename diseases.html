@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Top 10 Diseases</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #eef2f3 0%, #ffffff 100%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        header {
+            background-color: #2f8df3;
+            color: #fff;
+            padding: 30px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            text-align: center;
+            /* Center the text */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 3.5em;
+            /* Increased font size for emphasis */
+            font-weight: 700;
+            /* Bold style for the main heading */
+            text-transform: uppercase;
+            /* Make text uppercase */
+        }
+        
+        h2 {
+            color: #ffcc00;
+            /* Accent color for subtitles */
+            font-size: 1.5em;
+            margin: 10px 0;
+            font-weight: 600;
+            /* Slightly lighter than h1 */
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            flex: 1;
+        }
+        
+        .disease-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .disease-box {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            /* Remove underline from anchor */
+            border-left: 5px solid #0056b3;
+            /* Left border for emphasis */
+            padding-top: 30px;
+            /* Space for title */
+        }
+        
+        .disease-box:hover {
+            transform: translateY(-5px);
+            /* Lift effect on hover */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+        }
+        
+        .disease-name {
+            font-size: 1.8em;
+            color: #333;
+            /* Darker color for disease names */
+            margin-bottom: 10px;
+            font-weight: bold;
+            /* Bold for emphasis */
+            position: absolute;
+            /* Positioning title */
+            top: 20px;
+            /* Adjust position */
+            left: 20px;
+            /* Adjust position */
+        }
+        
+        .description {
+            color: #555;
+            /* Dark gray for better readability */
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            line-height: 1.5;
+            margin-top: 70px;
+            /* Space for title */
+        }
+        /* Footer Style */
+        
+        footer {
+            background-color: #0056b3;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        /* Colorful Backgrounds for Disease Boxes */
+        
+        .disease-box:nth-child(odd) {
+            background-color: #f9f9f9;
+            /* Light gray for odd boxes */
+        }
+        
+        .disease-box:nth-child(even) {
+            background-color: #e3f2fd;
+            /* Light blue for even boxes */
+        }
+        /* Responsive Styles */
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+                /* Reduce title size */
+            }
+            h2 {
+                font-size: 1.2em;
+                /* Reduce subtitle size */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Discover Top 10 Diseases </h1>
+        <h2>Click on a disease to learn more</h2>
+    </header>
+    <div class="container">
+        <div class="disease-list">
+            <a href="https://covid19-4.onrender.com/" target="_blank" class="disease-box">
+                <div class="disease-name">Covid</div>
+                <p class="description">A contagious disease caused by the SARS-CoV-2 virus, affecting respiratory health.</p>
+                <p class="description">Symptoms include fever, cough, and difficulty breathing.</p>
+            </a>
+            <a href="https://cardiovascular-avse.onrender.com" target="_blank" class="disease-box">
+                <div class="disease-name">Cardiovascular Diseases</div>
+                <p class="description">A group of disorders affecting the heart and blood vessels, leading to heart attack and stroke.</p>
+                <p class="description">Risk factors include hypertension, diabetes, and smoking.</p>
+            </a>
+            <a href="https://cancer-e9e2.onrender.com" target="_blank" class="disease-box">
+                <div class="disease-name">Cancer</div>
+                <p class="description">A disease where abnormal cells divide uncontrollably and destroy body tissue.</p>
+                <p class="description">Early detection through screening can significantly improve outcomes.</p>
+            </a>
+            <a href="https://chronicrespiratory-1.onrender.com" target="_blank" class="disease-box">
+                <div class="disease-name">Chronic Respiratory Diseases</div>
+                <p class="description">Diseases like asthma and chronic obstructive pulmonary disease (COPD) affecting breathing.</p>
+                <p class="description">Avoiding tobacco smoke is crucial for prevention.</p>
+            </a>
+            <a href="https://diabetes-saaj.onrender.com" target="_blank" class="disease-box">
+                <div class="disease-name">Diabetes</div>
+                <p class="description">A metabolic disease that causes high blood sugar, leading to serious health issues.</p>
+                <p class="description">Managing diet and exercise is vital for control.</p>
+            </a>
+            <a href="https://hivaids.onrender.com" target="_blank" class="disease-box">
+                <div class="disease-name">HIV/AIDS</div>
+                <p class="description">A virus that attacks the immune system, leading to life-threatening infections.</p>
+                <p class="description">Regular testing and early treatment can prolong life.</p>
+            </a>
+            <a href="https://hypertension-1.onrender.com" target="_blank" class="disease-box">
+                <div class="disease-name">Hypertension</div>
+                <p class="description">High blood pressure that can lead to heart disease and stroke.</p>
+                <p class="description">Lifestyle changes can help manage blood pressure effectively.</p>
+            </a>
+            <a href="https://infectiousdiseases.onrender.com" target="_blank" class="disease-box">
+                <div class="disease-name">Infectious Diseases</div>
+                <p class="description">Illnesses caused by pathogens such as bacteria, viruses, or parasites.</p>
+                <p class="description">Vaccination and hygiene are key prevention strategies.</p>
+            </a>
+            <a href="https://kidneydiseases.onrender.com/" target="_blank" class="disease-box">
+                <div class="disease-name">Kidney Diseases</div>
+                <p class="description">Conditions that affect the function of the kidneys, potentially leading to failure.</p>
+                <p class="description">Staying hydrated and managing blood pressure can help.</p>
+            </a>
+            <a href="https://stroke-1.onrender.com" target="_blank" class="disease-box">
+                <div class="disease-name">Stroke</div>
+                <p class="description">A medical emergency where blood flow to the brain is interrupted.</p>
+                <p class="description">Acting fast is crucial for minimizing damage.</p>
+            </a>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Health Information Center | All Rights Reserved</p>
+        <p><a href="#" style="color: white; text-decoration: underline;">Privacy Policy</a> | <a href="#" style="color: white; text-decoration: underline;">Contact Us</a></p>
+    </footer>
+</body>
+
+</html>
