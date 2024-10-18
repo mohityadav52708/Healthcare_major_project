@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hypertension in India</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f9;
+            color: #333;
+        }
+        
+        header {
+            background: url('https://w0.peakpx.com/wallpaper/50/231/HD-wallpaper-flag-of-india-grunge-art-rhombus-grunge-texture-indian-flag-asia-national-symbols-india-creative-art.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            padding: 60px;
+            text-align: center;
+            border-bottom: 2px solid #004bb5;
+            position: relative;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(57, 55, 55, 0.4);
+            z-index: 1;
+        }
+        
+        header h1 {
+            position: relative;
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 700;
+            z-index: 2;
+        }
+        
+        main {
+            padding: 20px;
+            max-width: 2000px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .section h2 {
+            margin-top: 0;
+            color: #0064ff;
+        }
+        
+        .section p {
+            line-height: 1.6;
+        }
+        
+        .form-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        form {
+            display: flex;
+            align-items: center;
+        }
+        
+        label {
+            font-weight: 700;
+            color: #0064ff;
+            margin-right: 10px;
+        }
+        
+        input[type="number"] {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            width: 80px;
+            font-size: 16px;
+            text-align: center;
+        }
+        
+        input[type="submit"] {
+            padding: 8px 20px;
+            border-radius: 4px;
+            border: none;
+            background-color: #0064ff;
+            color: #fff;
+            font-size: 16px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #0052cc;
+        }
+        
+        .chart-container {
+            background-color: #f0f4f8;
+            /* Soft background color for a modern look */
+            border-radius: 12px;
+            /* Smoother and larger corner rounding */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            /* Deeper shadow for a floating effect */
+            padding: 25px;
+            /* Slightly increased padding for better spacing */
+            margin-bottom: 40px;
+            /* More margin for breathing room */
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            /* Smooth transition effects for hover */
+        }
+        /* Add a hover effect to enhance interaction */
+        
+        .chart-container:hover {
+            transform: translateY(-10px);
+            /* Slight upward movement on hover */
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            /* Stronger shadow on hover for a pop-out effect */
+        }
+        /* Add a subtle gradient to the background for a sleek appearance */
+        
+        .chart-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+            /* Subtle gradient */
+            border-radius: inherit;
+            /* Keep border-radius consistent */
+            z-index: 1;
+            pointer-events: none;
+            /* Prevent interference with interaction */
+        }
+        
+        .chart-container>* {
+            position: relative;
+            z-index: 2;
+            /* Ensure content is above the gradient */
+        }
+        
+        .chart-container h2 {
+            margin-top: 0;
+            color: #0064ff;
+        }
+        
+        .chart-container button {
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            padding: 10px 20px;
+            border-radius: 6px;
+            border: none;
+            background-color: #8398d5;
+            color: #fff;
+            font-size: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            font-weight: 700;
+        }
+        
+        .chart-container button:hover {
+            background-color: #036fe9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .chart-container button:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer {
+            background-color: #0064ff;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 30px;
+            border-top: 2px solid #004bb5;
+        }
+        
+        footer p {
+            margin: 0;
+        }
+        /* Responsive Design */
+        
+        @media (max-width: 768px) {
+            .form-container {
+                flex-direction: column;
+            }
+            form {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            input[type="submit"] {
+                margin-left: 0;
+                margin-top: 10px;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Hypertension Data in India</h1>
+    </header>
+
+    <main>
+        <div class="section">
+            <h2>Hypertension in India: A Silent Threat</h2>
+            <p>Hypertension, or high blood pressure, is a growing health issue in India, often going unnoticed until it leads to serious conditions like heart attacks, strokes, or kidney failure. Key Causes: Poor diet, high salt intake, lack of exercise,
+                and stress are major contributors. Health Impact: Uncontrolled hypertension can result in life-threatening cardiovascular diseases. Awareness, regular blood pressure monitoring, and lifestyle changes are essential to preventing and managing
+                hypertension, with government programs aiming to promote early detection and control.
+
+            </p>
+        </div>
+
+        <div class="form-container">
+            <form action="/" method="get">
+                <label for="top_n">Show Top N States:</label>
+                <input type="number" id="top_n" name="top_n" value="{{ top_n }}" min="1" max="35">
+                <input type="submit" value="Update">
+            </form>
+        </div>
+
+        <div class="section">
+            <h2>Top {{ top_n }} States in India: Hypertension Cases</h2>
+            <p>This bar chart shows the number of Hypertension cases in the top {{ top_n }} states. Each bar represents a state, with the height of the bar corresponding to the number of cases.</p>
+            <div class="chart-container" data-aos="fade-up">
+                {{ bar_fig_html | safe }}
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Distribution of Hypertension Cases in Top {{ top_n }} States</h2>
+            <p>The pie chart illustrates the distribution of Hypertension cases among the top {{ top_n }} states. Each slice represents a state, with the size of the slice proportional to the number of cases in that state.</p>
+            <div class="chart-container" data-aos="fade-up" data-aos-delay="200">
+                {{ pie_fig_html | safe }}
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Distribution of Cure and Death Rates in Top {{ top_n }} States</h2>
+            <p>This scatter plot provides an overview of cure rates versus death rates for the top {{ top_n }} states. Each point represents a state, with its position indicating the cure rate and death rate.</p>
+            <div class="chart-container" data-aos="fade-up" data-aos-delay="400">
+                {{ scatter_fig_html | safe }}
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Area Chart of Hypertension Cases: Top {{ top_n }} States</h2>
+            <p>This interactive area chart visualizes data for the top {{ top_n }} states.</p>
+            <div class="chart-container" data-aos="fade-up" data-aos-delay="600">
+                {{ area_fig_html | safe }}
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hypertension Data Dashboard. All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

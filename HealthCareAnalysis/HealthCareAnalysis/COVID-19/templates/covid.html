@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 in India</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f9;
+            color: #333;
+        }
+        
+        header {
+            background: url('https://w0.peakpx.com/wallpaper/50/231/HD-wallpaper-flag-of-india-grunge-art-rhombus-grunge-texture-indian-flag-asia-national-symbols-india-creative-art.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            padding: 60px;
+            text-align: center;
+            border-bottom: 2px solid #004bb5;
+            position: relative;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(57, 55, 55, 0.4);
+            /* Adjust the rgba value for the fade effect */
+            z-index: 1;
+        }
+        
+        header h1 {
+            position: relative;
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 700;
+            z-index: 2;
+            /* Make sure the text is above the fade effect */
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+        
+        main {
+            padding: 20px;
+            max-width: 2000px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .section h2 {
+            margin-top: 0;
+            color: #0064ff;
+        }
+        
+        .section p {
+            line-height: 1.6;
+        }
+        
+        .form-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        form {
+            display: flex;
+            align-items: center;
+        }
+        
+        label {
+            font-weight: 700;
+            color: #0064ff;
+            margin-right: 10px;
+        }
+        
+        input[type="number"] {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            width: 80px;
+            font-size: 16px;
+            text-align: center;
+        }
+        
+        input[type="submit"] {
+            padding: 8px 20px;
+            border-radius: 4px;
+            border: none;
+            background-color: #0064ff;
+            color: #fff;
+            font-size: 16px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #0052cc;
+        }
+        
+        .chart-container {
+            background-color: #f0f4f8;
+            /* Soft background color for a modern look */
+            border-radius: 12px;
+            /* Smoother and larger corner rounding */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            /* Deeper shadow for a floating effect */
+            padding: 25px;
+            /* Slightly increased padding for better spacing */
+            margin-bottom: 40px;
+            /* More margin for breathing room */
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            /* Smooth transition effects for hover */
+        }
+        /* Add a hover effect to enhance interaction */
+        
+        .chart-container:hover {
+            transform: translateY(-10px);
+            /* Slight upward movement on hover */
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            /* Stronger shadow on hover for a pop-out effect */
+        }
+        /* Add a subtle gradient to the background for a sleek appearance */
+        
+        .chart-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+            /* Subtle gradient */
+            border-radius: inherit;
+            /* Keep border-radius consistent */
+            z-index: 1;
+            pointer-events: none;
+            /* Prevent interference with interaction */
+        }
+        
+        .chart-container>* {
+            position: relative;
+            z-index: 2;
+            /* Ensure content is above the gradient */
+        }
+        
+        .chart-container h2 {
+            margin-top: 0;
+            color: #0064ff;
+        }
+        
+        .chart-container button {
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            padding: 10px 20px;
+            border-radius: 6px;
+            border: none;
+            background-color: #8398d5;
+            color: #fff;
+            font-size: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            font-weight: 700;
+        }
+        
+        .chart-container button:hover {
+            background-color: #036fe9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .chart-container button:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer {
+            background-color: #0064ff;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 30px;
+            border-top: 2px solid #004bb5;
+        }
+        
+        footer p {
+            margin: 0;
+        }
+        /* Responsive Design */
+        
+        @media (max-width: 768px) {
+            .form-container {
+                flex-direction: column;
+            }
+            form {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            input[type="submit"] {
+                margin-left: 0;
+                margin-top: 10px;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>COVID-19 in India</h1>
+    </header>
+
+    <main>
+        <div class="section">
+            <h2>COVID-19: A Global Pandemic</h2>
+            <p>COVID-19 emerged as one of the most significant global health challenges, affecting millions and disrupting lives across the world. The highly contagious virus led to widespread illness, with severe cases requiring hospitalization and causing
+                extensive fatalities. Key Drivers: Rapid human-to-human transmission, global travel, and the initial lack of vaccines or treatments exacerbated the spread of the virus. Health Impact: COVID-19 caused unprecedented strain on healthcare
+                systems, leading to economic slowdowns and increased mortality, especially among the elderly and immunocompromised individuals. Global vaccination drives, public health measures like social distancing, and personal protective behaviors
+                played a crucial role in curbing the pandemic. However, the emergence of new variants continues to challenge global efforts in controlling the virus.
+
+            </p>
+        </div>
+
+        <div class="form-container">
+            <form action="/" method="get">
+                <label for="top_n">Show Top N States:</label>
+                <input type="number" id="top_n" name="top_n" value="{{ top_n }}" min="1" max="35">
+                <input type="submit" value="Update">
+            </form>
+        </div>
+
+        <div class="section">
+            <h2>Top {{ top_n }} States in India: COVID-19 Cases</h2>
+            <p>This bar chart shows the number of COVID-19 cases in the top {{ top_n }} states. Each bar represents a state, with the height of the bar corresponding to the number of cases.</p>
+            <div class="chart-container" data-aos="fade-up">
+                {{ bar_fig_html | safe }}
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Distribution of COVID-19 Cases in Top {{ top_n }} States</h2>
+            <p>The pie chart illustrates the distribution of COVID-19 cases among the top {{ top_n }} states. Each slice represents a state, with the size of the slice proportional to the number of cases in that state.</p>
+            <div class="chart-container" data-aos="fade-up" data-aos-delay="200">
+                {{ pie_fig_html | safe }}
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Distribution of Cure and Death Rates in Top {{ top_n }} States</h2>
+            <p>This scatter plot provides an overview of cure rates versus death rates for the top {{ top_n }} states. Each point represents a state, with its position indicating the cure rate and death rate.</p>
+            <div class="chart-container" data-aos="fade-up" data-aos-delay="400">
+                {{ scatter_fig_html | safe }}
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>ApexChart Example: Top {{ top_n }} States</h2>
+            <p>This interactive chart visualizes data for the top {{ top_n }} states. Click the "Refresh Chart" button to reload the chart and trigger its animation.</p>
+            <div class="chart-container" data-aos="fade-up" data-aos-delay="600">
+                <button id="reloadChart">Refresh Chart</button>
+                <div id="chart"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 COVID-19 Data Dashboard</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000
+        });
+
+        // Initial chart data
+        var apexChartData = JSON.parse('{{ apex_chart_data | safe }}');
+
+        // Chart options
+        var options = {
+            chart: {
+                type: 'bar',
+                animations: {
+                    enabled: true,
+                    easing: 'easeinout',
+                    speed: 800
+                },
+                width: '100%',
+                height: '400px',
+                toolbar: {
+                    show: true
+                },
+                background: '#fff5e6',
+            },
+            plotOptions: {
+                bar: {
+                    borderRadius: 8,
+                    horizontal: false,
+                    distributed: true,
+                    dataLabels: {
+                        position: 'top',
+                    },
+                }
+            },
+            dataLabels: {
+                enabled: true,
+                formatter: function(val) {
+                    return val;
+                },
+                offsetY: -20,
+                style: {
+                    fontSize: '12px',
+                    colors: ["#333"]
+                }
+            },
+            series: [{
+                name: 'Cases',
+                data: apexChartData.cases,
+            }],
+            xaxis: {
+                categories: apexChartData.categories,
+                labels: {
+                    style: {
+                        colors: ['#546E7A'],
+                        fontSize: '10px',
+                    }
+                },
+                axisBorder: {
+                    show: true,
+                    color: '#78909C',
+                },
+                axisTicks: {
+                    show: true,
+                    borderType: 'solid',
+                    color: '#78909C',
+                }
+            },
+            yaxis: {
+                title: {
+                    text: 'Number of Cases',
+                    style: {
+                        color: '#546E7A',
+                        fontSize: '14px',
+                        fontWeight: 600,
+                    }
+                }
+            },
+            fill: {
+                opacity: 1,
+                type: 'gradient',
+                gradient: {
+                    shade: 'light',
+                    type: 'vertical',
+                    gradientToColors: ['#FDD835', '#00E676', '#FF4081'],
+                    stops: [0, 50, 100]
+                }
+            },
+            colors: ['#FF5722', '#4CAF50', '#2196F3', '#FFEB3B', '#9C27B0', '#00BCD4', '#E91E63'],
+            tooltip: {
+                enabled: true,
+                y: {
+                    formatter: function(val) {
+                        return val + " cases";
+                    }
+                }
+            },
+            legend: {
+                position: 'top',
+                horizontalAlign: 'center',
+                floating: true,
+                offsetY: 0,
+                offsetX: -5,
+                markers: {
+                    radius: 12,
+                    width: 12,
+                    height: 12,
+                }
+            },
+            grid: {
+                show: true,
+                borderColor: '#e0e0e0',
+                strokeDashArray: 4,
+            }
+        };
+
+        // Create chart instance
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+
+        // Event listener for the refresh button
+        document.getElementById('reloadChart').addEventListener('click', function() {
+            chart.updateOptions({
+                series: [{
+                    name: 'Cases',
+                    data: apexChartData.cases
+                }],
+                xaxis: {
+                    categories: apexChartData.categories
+                }
+            }, true, true);
+        });
+    </script>
+
+
+</body>
+
+</html>

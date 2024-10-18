@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.section:hover {
+    transform: scale(1.05);
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.plotly-chart {
+    margin-bottom: 50px;
+}
+
+
+/* Ensure charts are responsive */
+
+.chart-container {
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.chart-container svg {
+    width: 100% !important;
+    height: auto !important;
+}
+
+
+/* Adjustments for the ApexChart container */
+
+#chart {
+    width: 100%;
+    height: 400px;
+}
+
+
+/* Adjust for smaller screens */
+
+@media (max-width: 200px) {
+    .chart-container {
+        padding: 10px;
+    }
+    #chart {
+        height: 100px;
+        width: 100px;
+    }
+}
