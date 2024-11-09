@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancer Cases in Top 10 Indian States</title>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+</head>
+<body>
+    <h2>Top 10 Indian States by Cancer Cases</h2>
+    
+    <!-- Line Chart for Cancer Cases -->
+    <div id="lineChart"></div>
+    
+    <!-- Pie Chart for Cancer Cases Distribution -->
+    <div id="pieChart" style="margin-top: 50px;"></div>
+
+    <script>
+        async function fetchCancerData() {
+            const response = await fetch('/api/cancer-data');
+            const data = await response.json();
+            return data;
+        }
+
+        async function createCharts() {
+            const data = await fetchCancerData();
+
+            // Line Chart Options
+            const lineChartOptions = {
+                chart: {
+                    type: 'line', 
+                    height: 350
+                },
+                series: [{
+                    name: 'Cancer Cases',
+                    data: data.map(item => item.cases)
+                }],
+                xaxis: {
+                    categories: data.map(item => item.state),
+                    title: {
+                        text: 'States'
+                    }
+                },
+                yaxis: {
+                    title: {
+                        text: 'Number of Cases'
+                    }
+                },
+                title: {
+                    text: 'Cancer Cases in Top 10 Indian States',
+                    align: 'center'
+                },
+                tooltip: {
+                    enabled: true,
+                    y: {
+                        formatter: function (val) {
+                            return val + " cases";
+                        }
+                    }
+                }
+            };
+
+            // Pie Chart Options
+            const pieChartOptions = {
+                chart: {
+                    type: 'pie',
+                    height: 350
+                },
+                series: data.map(item => item.cases),
+                labels: data.map(item => item.state),
+                title: {
+                    text: 'Distribution of Cancer Cases in Top 10 Indian States',
+                    align: 'center'
+                },
+                tooltip: {
+                    enabled: true,
+                    y: {
+                        formatter: function (val) {
+                            return val + " cases";
+                        }
+                    }
+                }
+            };
+
+            // Render Line Chart
+            const lineChart = new ApexCharts(document.querySelector("#lineChart"), lineChartOptions);
+            lineChart.render();
+
+            // Render Pie Chart
+            const pieChart = new ApexCharts(document.querySelector("#pieChart"), pieChartOptions);
+            pieChart.render();
+        }
+
+        createCharts();
+    </script>
+</body>
+</html> 

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancer Data Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+</head>
+<body>
+    <h1>Top 10 States with Highest Cancer Cases</h1>
+
+    <div id="bar-chart"></div>
+    <div id="pie-chart"></div>
+
+    <script>
+        // Fetch the cancer data
+        fetch('/api/cancer-data')
+            .then(response => response.json())
+            .then(data => {
+                const states = data.map(item => item.state);
+                const cases = data.map(item => item.cases);
+
+                // Bar chart
+                var barOptions = {
+                    chart: {
+                        type: 'bar'
+                    },
+                    series: [{
+                        name: 'Cancer Cases',
+                        data: cases
+                    }],
+                    xaxis: {
+                        categories: states
+                    }
+                }
+
+                var barChart = new ApexCharts(document.querySelector("#bar-chart"), barOptions);
+                barChart.render();
+
+                // Pie chart
+                var pieOptions = {
+                    chart: {
+                        type: 'pie'
+                    },
+                    series: cases,
+                    labels: states
+                }
+
+                var pieChart = new ApexCharts(document.querySelector("#pie-chart"), pieOptions);
+                pieChart.render();
+            });
+    </script>
+</body>
+</html>

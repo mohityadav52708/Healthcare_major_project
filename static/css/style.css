@@ -682,6 +682,7 @@
   width: 100%;
   height: 20%;
   background-color: #0064ff;
+  /* background-color: #011027; */
   color: white;
   text-align: center;
   font-size: 18px;
@@ -700,7 +701,103 @@
   transform: translateY(-20px);
 }
 
-  @media screen and (min-width: 700px) {
+.fourth_container .content_cover_of_fourth_container .doctor{
+  height: 80vh;
+}
+.fourth_container .content_cover_of_fourth_container .doctor:hover{ 
+  background-color: #0052cc;
+  color: white;
+}
+.fourth_container .content_cover_of_fourth_container .doctor:hover p{
+  /* background-color: #0052cc; */
+  color: white;
+}
+.fourth_container .content_cover_of_fourth_container .doctor img{
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+}
+footer {
+  background-color: #001433;
+  color: white;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Logo and Description */
+.footer-logo-description img {
+  max-width: 150px;
+  margin-bottom: 10px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Social Media Links */
+.footer-social-media h4, .footer-quick-links h4, .footer-clinic-hours h4 {
+  margin-bottom: 10px;
+  animation: slideIn 1s ease-in-out;
+}
+
+.footer-social-media ul, .footer-quick-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-social-media ul li, .footer-quick-links ul li {
+  margin-bottom: 5px;
+}
+
+.footer-social-media ul li a, .footer-quick-links ul li a {
+  text-decoration: none;
+  color: #fff8f8;
+  transition: color 0.3s ease;
+}
+
+.footer-social-media ul li a:hover, .footer-quick-links ul li a:hover {
+  color: #007bff;
+}
+
+/* Clinic Hours */
+.footer-clinic-hours p {
+  margin: 5px 0;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  color: #ffffff;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.footer-bottom p a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom p a:hover {
+  color: #007bff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+ @media screen and (min-width: 700px) {
     #navbar-toggle,
     #navbar-toggle[aria-expanded="true"] {
       display: none;
@@ -857,5 +954,23 @@
     margin: 20px;
     background-color: #fff;
     transition: transform 0.5s ease-in-out;
+}
+.sixth_container{
+  width: 100%;
+  height: 250vh;
+  margin-top: 30vh;
+}
+.sixth_container .content_cover_of_sixth_container{
+  height: 150vh;
+  width: 90%;
+  margin-top: 0;
+}
+.fourth_container .content_cover_of_fourth_container .doctor{
+  height: 70vh;
+}
+.fourth_container .content_cover_of_fourth_container .doctor img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
 }
   }
