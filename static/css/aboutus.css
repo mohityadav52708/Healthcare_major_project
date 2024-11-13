@@ -1,0 +1,80 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.about-header {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #002950;
+    color: white;
+}
+
+.about-header h1 {
+    font-size: 2.5rem;
+}
+
+.about-intro, .mission-vision-values, .services, .team, .testimonials {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2, h3 {
+    color: #00796b;
+    margin-bottom: 10px;
+}
+
+.mission, .vision, .values {
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+.services ul, .team ul {
+    padding-left: 20px;
+    list-style: disc;
+}
+
+.testimonials {
+    text-align: center;
+}
+
+.testimonial {
+    font-style: italic;
+    margin: 20px 0;
+}
+
+.testimonial span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #00796b;
+    color: white;
+    margin-top: 40px;
+}

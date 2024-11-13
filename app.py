@@ -27,6 +27,12 @@ def cancer_data_api():
 @app.route('/')
 def index():
     return render_template('home.html')
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+@app.route('/aboutus')
+def aboutus():
+    return render_template('aboutus.html')
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Healthcare Website</title>
+    <link rel="stylesheet" href="../static/css/contact.css" />
+</head>
+<body>
+    <section class="contact-header">
+        <h1>Contact Us</h1>
+        <p>We're here to help you. Reach out to us for any inquiries or assistance.</p>
+    </section>
+
+    <section class="contact-container">
+        <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <p>If you have any questions, feel free to contact us using the form below or visit us at our address.</p>
+            <ul>
+                <li><strong>Phone:</strong> (123) 456-7890</li>
+                <li><strong>Email:</strong> support@healthcare.com</li>
+                <li><strong>Address:</strong> 123 Healthcare Street, Wellness City, HC 12345</li>
+            </ul>
+        </div>
+
+        <div class="contact-form">
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="748afe2a-ebce-4e7a-a701-84a9b69972cc">
+        
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+        
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+        
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+        
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+        
+                <!-- Honeypot Spam Protection -->
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+        
+                <!-- Custom Confirmation / Success Page (Optional) -->
+                <!-- <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html"> -->
+        
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+        
+
+        <div class="map-container">
+            <h2>Our Location</h2>
+            
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d35147.55594677243!2d85.80933964667048!3d20.380220499628063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a190eca607ec6f5%3A0x95d3f0b6baf4a7ff!2sRaghunathpur%2C%20Bhubaneswar%2C%20Odisha!5e0!3m2!1sen!2sin!4v1731528946615!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+</body>
+</html>
